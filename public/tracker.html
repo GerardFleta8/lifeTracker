@@ -28,44 +28,47 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="goals.html">Goals</a></li>
           <li class="active"><a href="tracker.html">Track</a></li>
-          <li><a href="analisis.html">Analyse</a></li>
+          <li><a href="analysis.html">Analyse</a></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
   </nav>
-  <div class="container">
-    <div class="form-horizontal tracker-form">
-      <div class="row tracker-heading">
-        <div class="col-md-6 col-md-offset-3">
-          <h2>Goals tracker</h2>
-        </div>
+  <div class="form-horizontal tracker-form">
+    <div class="row tracker-heading">
+      <div class="col-md-8 col-md-offset-2">
+        <h3><font color="red"><b>Mis objetivos </b></font></h3>
+      </div>
+    <div class="col-xs-2">
+      <div align="pull-right">
+        <input type="date" ng-model="day" class="form-control" ng-change="loadDay(day, goals)"/>
       </div>
     </div>
-
-    <div ng-repeat="goal in goals" class="form-group row from-row">
-      <div class="col-xs-6 col-md-offset-3 goal" >{{goal.description}} </div>
-      <div class="col-xs-2">
+  </div>
+    <div ng-repeat="goal in goals" class="form-group row form-row">
+      <div class="col-xs-7 goal">{{goal.description}}</div>
+      <div class="col-xs-8">{{goal.result}}</div>
+      <div class="col-xs-17 goal">
         <div class="pull-right">
           <label class="btn btn-success">
-            <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-click="addOk (goal)"></span>
+
+            <span class="glyphicon glyphicon-ok" aria-hidden="true" ng-click="addOk(goal)" ng-class="{'negrita': 1==1}"></span>
           </label>
           <label class="btn btn-danger">
-            <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="addKo (goal)"></span>
+            <span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="addKo(goal)"></span>
           </label>
         </div>
       </div>
     </div>
-
-    <hr>
-    <footer>
-      <p>&copy; 2017 SEK Catalunya</p>
-    </footer>
-  </div> <!-- /container -->
-
-  <!-- Bootstrap core JavaScript
-  ================================================== -->
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+  </div>
+  <hr>
+  <footer>
+    <p>&copy; 2017 SEK Catalunya</p>
+  </footer>
+</div> <!-- /container -->
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
